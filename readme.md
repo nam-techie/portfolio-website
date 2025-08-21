@@ -1,29 +1,81 @@
-# henryheffernan.com
+# Nam Techie 3D Portfolio
 
-This is one of two repositories created for my portfolio website <a href="https://henryheffernan.com/"><samp>henryheffernan.com</samp></a>. If you are looking for the 2D OS repository you can find it <a href="https://github.com/henryjeff/portfolio-inner-site"><samp>here</samp></a>! Thanks for taking the time to check this out. If you have any questions of comments, feel free to shoot me an email at <samp><a href="mailto:henryheffernan@gmail.com">henryheffernan@gmail.com</a></samp> or you can DM me on twitter <a href="https://twitter.com/henryheffernan"><samp>@henryheffernan</samp></a>.
+A Three.js powered portfolio site that renders a 3D desk scene and embeds a separate operating system inside the on-screen monitor.
 
-<br>
+## Features
+- 3D environment with camera controls and animations.
+- Monitor content loaded via `<iframe>` from an external site.
+- Express server for serving the built assets and handling contact form emails.
+- Webpack build pipeline with TypeScript support.
 
-To setup a dev environment:
+## Tech Stack
+- [Three.js](https://threejs.org/)
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Webpack](https://webpack.js.org/)
+- [Express](https://expressjs.com/)
+- [GSAP](https://greensock.com/gsap/)
 
+## Prerequisites
+- [Node.js](https://nodejs.org/) >= 18
+- npm
+
+## Installation
 ```bash
 # Clone the repository
+git clone https://github.com/nam-techie/portfolio-website.git
+cd portfolio-website
 
-# Install dependencies 
-npm i
+# Install dependencies
+npm install
+```
 
-# Run the local dev server
+## Development
+```bash
+# Start webpack dev server
 npm run dev
 ```
+The development server reloads automatically when files change.
 
-To serve a production build:
-
+## Production Build
 ```bash
-# Install dependencies if not already done - 'npi i'
-
-# Build for production
+# Build optimized assets
 npm run build
 
-# Serve the build using express
+# Serve the production build
 npm start
 ```
+The server listens on port `8080` and serves the `public` directory.
+
+## Environment Variables
+The contact form uses Gmail SMTP and requires:
+```bash
+FOLIO_EMAIL=your.gmail.username
+FOLIO_PASSWORD=your.gmail.password
+```
+
+## Project Structure
+```
+├── bundler/            # Webpack configurations
+├── server/             # Express server
+├── src/                # Three.js application code
+├── static/             # Models, textures, audio assets
+└── .github/workflows/  # CI/CD definitions
+```
+
+## CI/CD
+A GitHub Actions workflow builds the project on every push and deploys to Vercel when pushing to `main`.
+Provide the following secrets in the repository settings:
+- `VERCEL_TOKEN`
+- `VERCEL_ORG_ID`
+- `VERCEL_PROJECT_ID`
+
+## Contributing
+Issues and pull requests are welcome. Please open a discussion before major changes.
+
+## License
+UNLICENSED
+
+## Contact
+- Email: [namtechie@gmail.com](mailto:namtechie@gmail.com)
+- Twitter: [@namtechie](https://twitter.com/namtechie)

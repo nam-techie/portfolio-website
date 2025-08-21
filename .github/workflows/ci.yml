@@ -1,0 +1,47 @@
+name: CI  # Workflow name
+
+on:  # Trigger events
+  push:  # Run on pushes
+    branches: [main]  # Target branch
+  pull_request:  # Run on pull requests
+    branches: [main]  # Target branch
+
+jobs:  # Job definitions
+  build:  # Build job
+    runs-on: ubuntu-latest  # GitHub runner
+    steps:  # List of steps
+      - name: Checkout repository  # Fetch code
+        uses: actions/checkout@v4  # Official checkout action
+      - name: Setup Node.js  # Prepare Node
+        uses: actions/setup-node@v4  # Official setup action
+        with:  # Action inputs
+          node-version: 18  # Use Node.js v18
+          cache: npm  # Cache npm modules
+      - name: Install dependencies  # Install packages
+        run: npm ci  # Clean install
+      - name: Build project  # Compile assets
+        run: npm run build  # Webpack build
+      - name: Run tests  # Execute tests
+        run: npm test --if-present  # Skip if absent
+
+  deploy:  # Deployment job
+    needs: build  # Depends on build
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'  # Only for main pushes
+    runs-on: ubuntu-latest  # GitHub runner
+    steps:  # List of steps
+      - name: Checkout repository  # Fetch code
+        uses: actions/checkout@v4  # Official checkout action
+      - name: Setup Node.js  # Prepare Node
+        uses: actions/setup-node@v4  # Official setup action
+        with:  # Action inputs
+          node-version: 18  # Use Node.js v18
+      - name: Install dependencies  # Install packages
+        run: npm ci  # Clean install
+      - name: Deploy to Vercel  # Deployment step
+        uses: amondnet/vercel-action@v20  # Vercel action
+        with:  # Action inputs
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}  # Vercel token
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}  # Org ID
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}  # Project ID
+          working-directory: ./  # Root directory
+
