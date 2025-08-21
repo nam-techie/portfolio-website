@@ -16,9 +16,8 @@ jobs:  # Job definitions
         uses: actions/setup-node@v4  # Official setup action
         with:  # Action inputs
           node-version: 18  # Use Node.js v18
-          cache: npm  # Cache npm modules
       - name: Install dependencies  # Install packages
-        run: npm ci  # Clean install
+        run: npm install  # Install packages
       - name: Build project  # Compile assets
         run: npm run build  # Webpack build
       - name: Run tests  # Execute tests
@@ -36,7 +35,7 @@ jobs:  # Job definitions
         with:  # Action inputs
           node-version: 18  # Use Node.js v18
       - name: Install dependencies  # Install packages
-        run: npm ci  # Clean install
+        run: npm install  # Install packages
       - name: Deploy to Vercel  # Deployment step
         uses: amondnet/vercel-action@v20  # Vercel action
         with:  # Action inputs
