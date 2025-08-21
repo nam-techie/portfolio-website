@@ -1,7 +1,6 @@
 # nam-techie.com
 
-This repository powers my 3D portfolio website at <a href="https://portfolio-nam-techie.vercel.app/"><samp>portfolio-nam-techie.vercel.app</samp></a>. If you are looking for the 2D OS repository you can find it <a href="https://github.com/nam-techie/portfolio-inner-site"><samp>here</samp></a>! Thanks for taking the time to check this out. If you have any questions or comments, feel free to shoot me an email at <samp><a href="mailto:namtechie@gmail.com">namtechie@gmail.com</a></samp> or you can DM me on twitter <a href="https://twitter.com/namtechie"><samp>@namtechie</samp></a>.
-
+This repository powers my 3D portfolio website at <a href="https://portfolio-nam-techie.vercel.app/"><samp>portfolio-nam-techie.vercel.app</samp></a>. If you are looking for the 2D OS repository you can find it <a href="https://github.com/nam-techie/portfolio-inner-site"><samp>here</samp></a>! Thanks for taking the time to check this out. If you have any questions or comments, feel free to shoot me an email at <samp><a href="mailto:nam.dpwork04@gmail.com">nam.dpwork04@gmail.com</a></samp>
 <br>
 
 To setup a dev environment:
