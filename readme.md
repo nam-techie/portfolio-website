@@ -77,5 +77,4 @@ Issues and pull requests are welcome. Please open a discussion before major chan
 UNLICENSED
 
 ## Contact
-- Email: [namtechie@gmail.com](mailto:namtechie@gmail.com)
-- Twitter: [@namtechie](https://twitter.com/namtechie)
+- Email: [nam.dpwrok04@gmail.com](mailto:nam.dpwrok04@gmail.com)
