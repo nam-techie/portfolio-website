@@ -183,8 +183,8 @@ export default class MonitorScreen extends EventEmitter {
         };
 
         // Set iframe attributes
-        // PROD
-        iframe.src = 'https://os.henryheffernan.com/';
+        // PROD - chuyển sang trang portfolio của Nam Techie
+        iframe.src = 'https://portfolio-nam-techie.vercel.app/';
         /**
          * Use dev server is query params are present
          *
@@ -204,7 +204,8 @@ export default class MonitorScreen extends EventEmitter {
         iframe.className = 'jitter';
         iframe.id = 'computer-screen';
         iframe.frameBorder = '0';
-        iframe.title = 'HeffernanOS';
+        // Đặt tiêu đề iframe theo thương hiệu cá nhân
+        iframe.title = 'NamTechieOS';
 
         // Add iframe to container
         container.appendChild(iframe);
